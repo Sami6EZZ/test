@@ -1,0 +1,41 @@
+<html lang="fr" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de connexion</title>
+    <link rel="stylesheet"  href="style/css_page_connexion.css" >
+    
+    
+</head>
+<body>
+    <nav>
+		<img src="images/LIGERON-BLANC-RVB.png" alt="Ligeron">
+	</nav>
+
+	<div class="ligne">
+		<div class="colonne">
+			<img src="images/smartLI_im_logo_sans_arriere_plan2.png"  style="max-width: 100%;">
+		
+        </div>
+		<div class="colonne">
+			<div th:if="${message}">
+                <h2 th:text="${message}"/>
+            </div>
+        
+            <div>
+                <form method="POST" enctype="multipart/form-data" action="/">
+                    <table>
+                        <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+                        <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+                    </table>
+                </form>
+            </div>
+        
+            c
+    </div>
+    </div>
+
+	
+
+</body>
+</html>

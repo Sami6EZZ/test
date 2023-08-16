@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    min-width: fit-content;
+    background: radial-gradient(ellipse at center, #003180 10%, #191833 80%, rgb(2, 0, 27) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-bottom: 0px;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+
+    
+
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(1px);
+    height: 60px;
+    padding: 0 20px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    min-width: fit-content;
+  }
+
+  /* logo ligeron */
+  nav img {
+    height: 90%;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+
+  }
+
+  .logo_ligeron {
+    height: 90%;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    position: left;
+  }
+  
+  
+  .username {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    min-width: fit-content;
+    height: 70%;
+    position: right;
+  }
+  .username img{
+    margin-left: 20px;
+  }
+  
+  
+  
+  
+  
+
+
+
+
+
+
+/* Style pour le div d'affichage de l'image */
+.secteur_image {
+    overflow: hidden;
+    max-width: fit-content;
+    display: block;
+    margin: 0 auto;
+    justify-content: center;
+    position: relative;
+    min-height: fit-content;
+    top: 0%;
+    
+    margin-top: 0; /* Réinitialisez la marge-supérieure à 0 */
+
+    @media (min-width: 900px) {
+        margin-top: -60px; /*  la marge supérieure à -60px pour compenser la barre de navigation */
+    }
+}
+.secteur_image img {
+  height: 125px;
+  width: 300px;
+    object-fit: contain;
+}
+
+/* styles.css */
+
+#bloc_principal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .bouton_copie {
+    margin: 10px;
+    background: transparent;
+    box-sizing: border-box;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    border-radius: 10px;
+    border: solid 1px cyan;
+  }
+  
+  .bouton_copie button {
+    background: transparent;
+    border: none;
+    white-space: normal;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    width: 295px;
+    height: 150px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    position: relative;
+    flex-direction: column;
+    box-sizing: border-box;
+    min-height: fit-content;
+  }
+  
+  .bouton_copie:hover {
+    box-shadow: 0px 0px 30px cyan;
+  }
+  
+  .bouton_copie img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+  
+  .bouton_copie button span {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  

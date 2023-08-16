@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page projets</title>
+    <link rel="stylesheet"  href="style/css_page_affichage_projets.css" >
+<body>
+    <nav>
+		<div class="logo_ligeron">
+			<!-- img ligeron --> 
+			<img src="images/LIGERON-BLANC-RVB.png" alt="Ligeron">
+		</div>
+		
+        <div class="username">
+			<img style="cursor: pointer" src="images/power-off.png" alt="icone_deconnexion" id="icone_deconnexion">
+		</div>
+		
+
+	</nav>
+
+	<div class="secteur_image">
+		<!-- img smartli--> 
+		<img   src="images/smartLI_im_logo_sans_arriere_plan2.png"  alt="Ligeron">
+	</div>
+
+    <div id="bloc_principal" class="bloc-principal">
+        <!-- Thymeleaf loop to generate blocks for each file -->
+        <div th:each="file : ${files}" class="bouton_copie">
+            <a th:href="@{/files/{filename}(filename=${file})}" class="bloc-link">
+                <div class="bloc-button">
+                    <span th:text="${file}" class="button-text"></span>
+                    <img src="images/image_sous_nom_projet.png" alt="Image">
+                </div>
+            </a>
+        </div>
+    </div>
+	  
