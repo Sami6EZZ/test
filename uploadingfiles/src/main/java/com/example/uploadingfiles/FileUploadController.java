@@ -27,6 +27,7 @@ import com.example.uploadingfiles.storage.StorageService;
 public class FileUploadController {
 
 	private final StorageService storageService;
+	
 
 	@Autowired
 	public FileUploadController(StorageService storageService) {
@@ -57,7 +58,8 @@ public class FileUploadController {
 
 	@GetMapping("/files/{filename:.+}")
 	@ResponseBody
-	public ResponseEntity<Resource> serveFile(@PathVariable String filename) {
+	public ResponseEntity<Resource> serveFile(@PathVariable String filename,
+			@RequestParam("utilisateur") String utilisateur) {
 
 		Resource file = storageService.loadAsResource(filename);
 		return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION,
@@ -66,9 +68,10 @@ public class FileUploadController {
 
 	@PostMapping("/")
 	public String handleFileUpload(@RequestParam("file") MultipartFile file,
+			@RequestParam("utilisateur") String utilisateur,
 			RedirectAttributes redirectAttributes) {
 
-		storageService.store(file);
+		storageService.store(file, utilisateur);
 		redirectAttributes.addFlashAttribute("message",
 				"You successfully uploaded " + file.getOriginalFilename() + "!");
 

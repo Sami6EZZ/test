@@ -28,7 +28,7 @@ public class FileSystemStorageService implements StorageService {
 	}
 
 	@Override
-	public void store(MultipartFile file) {
+	public void store(MultipartFile file, String utilisateur)  {
 		try {
 			if (file.isEmpty()) {
 				throw new StorageException("Failed to store empty file.");
@@ -45,6 +45,8 @@ public class FileSystemStorageService implements StorageService {
 				Files.copy(inputStream, destinationFile,
 					StandardCopyOption.REPLACE_EXISTING);
 			}
+			// enregistrement du nom d'utilisateur comme attribut du fichier importé
+			Files.setAttribute(destinationFile, "utilisateur", utilisateur);
 		}
 		catch (IOException e) {
 			throw new StorageException("Failed to store file.", e);
